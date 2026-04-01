@@ -1,0 +1,9 @@
+﻿# Runtime data
+/data/appointments.json
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

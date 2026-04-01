@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>后台管理 | 清研思维</title>
+  <meta name="description" content="清研思维后台登录与预约信息查看。" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="admin">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="/">
+        <img src="logo.png" alt="清研思维 logo" />
+        <div><strong>清研思维</strong><span>教育思维扩展</span></div>
+      </a>
+      <button class="menu-btn" data-menu-toggle aria-expanded="false" aria-label="打开菜单">菜单</button>
+      <nav class="main-nav" aria-label="主导航">
+        <a data-nav="home" href="/">首页</a>
+        <a data-nav="about" href="/about">关于我们</a>
+        <a data-nav="courses" href="/courses">课程体系</a>
+        <a data-nav="methodology" href="/methodology">教学方法</a>
+        <a data-nav="team" href="/team">师资团队</a>
+        <a data-nav="contact" href="/contact">联系我们</a>
+        <a data-nav="admin" href="/admin">后台登录</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" data-admin-app>
+    <section class="page-hero reveal">
+      <span class="badge">Admin</span>
+      <h1>预约信息后台</h1>
+      <p>登录后可查看用户在官网提交的预约咨询信息。</p>
+    </section>
+
+    <section class="section reveal" data-admin-login>
+      <article class="form-card" style="max-width:520px;">
+        <h2>后台登录</h2>
+        <p class="lead">默认账号：<span class="mono">admin</span>，密码：<span class="mono">admin123456</span></p>
+        <form id="admin-login-form" novalidate>
+          <div class="form-row">
+            <label for="admin-username">账号</label>
+            <input id="admin-username" name="username" placeholder="请输入账号" />
+          </div>
+          <div class="form-row">
+            <label for="admin-password">密码</label>
+            <input id="admin-password" type="password" name="password" placeholder="请输入密码" />
+          </div>
+          <button type="submit" class="btn btn-primary">登录后台</button>
+          <p class="admin-login-status form-status" role="status" aria-live="polite"></p>
+        </form>
+      </article>
+    </section>
+
+    <section class="section reveal" data-admin-panel style="display:none;">
+      <article class="card">
+        <h2>预约信息列表</h2>
+        <p class="lead">此处展示来自“联系我们”页面的预约数据。</p>
+        <div class="admin-actions">
+          <button type="button" class="btn btn-primary" data-refresh>刷新数据</button>
+          <button type="button" class="btn btn-ghost" data-logout>退出登录</button>
+        </div>
+        <p class="admin-panel-status form-status"></p>
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>提交时间</th>
+                <th>家长姓名</th>
+                <th>联系电话</th>
+                <th>学生年龄段</th>
+                <th>咨询内容</th>
+              </tr>
+            </thead>
+            <tbody id="appointment-table-body"></tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <span>© 2026 清研思维. All Rights Reserved.</span>
+      <span>后台管理入口：<a href="/admin">admin</a></span>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+
